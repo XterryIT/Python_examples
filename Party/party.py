@@ -1,3 +1,4 @@
+import random
 friends_dict = {}
 
 num_friends = int(input("Enter the number of friends joining (including you):"))
@@ -24,4 +25,14 @@ else:
         for key in friends_dict:
             friends_dict[key] = pay
 
-        print(friends_dict)
+
+    print("")
+    random_chose = input("Do you want to use the \"Who is lucky?\" feature? Write Yes/No: ")
+
+    if random_chose == "No":
+        print("")
+        print("No one is going to be lucky")
+    elif random_chose == "Yes":
+        print("")
+        chose = random.choice(list(friends_dict.keys()))
+        print(chose,"is the lucky one!")
