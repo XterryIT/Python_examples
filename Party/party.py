@@ -13,7 +13,6 @@ else:
         friends_dict[name] = 0
     print("")
 
-    print("")
     payment = float(input("Enter the total bill value: "))
     pay = 0
 
@@ -32,7 +31,17 @@ else:
     if random_chose == "No":
         print("")
         print("No one is going to be lucky")
+        print("")
+        print(friends_dict)
     elif random_chose == "Yes":
+        temp = num_friends - 1
+        pay = round(payment / temp, 2)
         print("")
         chose = random.choice(list(friends_dict.keys()))
         print(chose,"is the lucky one!")
+        friends_dict[chose] = 0
+        for key in friends_dict:
+            if key != chose:
+                friends_dict[key] = pay
+        print("")
+        print(friends_dict)
